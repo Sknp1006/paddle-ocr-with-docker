@@ -10,6 +10,7 @@
 ```shell
 git clone https://github.com/Sknp1006/paddle-ocr-with-docker.git
 cd paddle-ocr-with-docker
+git submodule add https://github.com/Sknp1006/PaddleOCR.git
 
 # 安装python环境（需要有pipenv模块）
 pipenv install
