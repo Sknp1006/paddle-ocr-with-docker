@@ -45,3 +45,7 @@ python tools/infer/predict_system.py --image_dir="../example/image/example.jpg" 
 python tools/infer/predict_system.py --image_dir="../example/image/example.jpg" --det_model_dir="../models/ch_ppocr_server_v2.0_det_infer/" --cls_model_dir="../models/ch_ppocr_mobile_v2.0_cls_infer/" --rec_model_dir="../models/ch_ppocr_server_v2.0_rec_infer/" --use_angle_cls=true --use_gpu=False --use_mp=True --total_process_num=6
 ```
 
+- 识别结果
+
+![example](https://user-images.githubusercontent.com/41496773/143424123-c8f70f25-73bd-49a0-a017-3e2f959c02f2.jpg)
+
