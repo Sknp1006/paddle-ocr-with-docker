@@ -1,5 +1,5 @@
 # paddle-ocr-with-docker
-基于paddle推理模型的docker文字识别服务端，绝赞开发中...
+基于paddle推理模型的docker文字识别服务端，绝赞开发中
 
 ## QuickStart
 
