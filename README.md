@@ -1,6 +1,10 @@
 # paddle-ocr-with-docker
 基于paddle推理模型的docker文字识别服务端，绝赞开发中
 
+## 开发环境
+
+强烈建议在linux下开发
+
 ## QuickStart
 
 > 因家境贫寒，电脑没GPU，故以CPU版示例
