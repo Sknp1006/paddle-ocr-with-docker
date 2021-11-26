@@ -8,9 +8,9 @@
 - 克隆本项目
 
 ```shell
-git clone https://github.com/Sknp1006/paddle-ocr-with-docker.git
+git clone https://github.com/Sknp1006/paddle-ocr-with-docker
 cd paddle-ocr-with-docker
-git submodule add https://github.com/Sknp1006/PaddleOCR
+git clone https://github.com/Sknp1006/PaddleOCR
 
 # 安装python环境（需要有pipenv模块）
 pipenv install
@@ -19,6 +19,12 @@ pipenv install
 - 下载模型
 
 > PaddleOCR：[OCR模型列表（V2.1，2021年9月6日更新）](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.3/doc/doc_ch/models_list.md) 
+>
+> 项目用到的推理模型（后缀为infer）：
+>
+> - [ch_ppocr_server_v2.0_det_infer（文字检测模型）](https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_server_v2.0_det_infer.tar) 
+> - [ch_ppocr_mobile_v2.0_cls_infer（方向分类器）](https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_cls_infer.tar) 
+> - [ch_ppocr_server_v2.0_rec_infer（文字识别模型）](https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_server_v2.0_rec_infer.tar) 
 
 ```shell
 # 在项目根目录新建models文件夹，将下载的模型解压缩到此处（以文件夹为单位）
