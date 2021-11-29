@@ -12,9 +12,8 @@
 - 克隆本项目
 
 ```shell
-git clone https://github.com/Sknp1006/paddle-ocr-with-docker
-cd paddle-ocr-with-docker
-git clone https://github.com/Sknp1006/PaddleOCR
+# 同时克隆子模块
+git clone --recurse-submodules https://github.com/Sknp1006/paddle-ocr-with-docker
 
 # 安装python环境（需要有pipenv模块）
 pipenv install
