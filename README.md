@@ -8,6 +8,9 @@
 ## QuickStart
 
 > 因家境贫寒，电脑没GPU，故以CPU版示例
+> 此处运行环境为windows
+
+### 通过命令行运行
 
 - 克隆本项目
 
@@ -16,6 +19,7 @@
 git clone --recurse-submodules https://github.com/Sknp1006/paddle-ocr-with-docker
 
 # 安装python环境（需要有pipenv模块）
+# 注：colorama模块需要windows环境
 pipenv install
 ```
 
@@ -57,4 +61,49 @@ python tools/infer/predict_system.py --image_dir="../example/image/example.jpg" 
 - 识别结果
 
 ![example](https://user-images.githubusercontent.com/41496773/143424123-c8f70f25-73bd-49a0-a017-3e2f959c02f2.jpg)
+
+### 通过docker运行
+
+```shell
+cd example
+
+# 构建docker
+docker build --rm -t {image_name:tag} .
+
+# 启动服务
+docker run -p 8866:8866 --name {container_name} -d {image_name:tag}
+```
+
+> 初次启动服务会下载 `chinese_ocr_db_crnn_server` 推理模型
+
+**调用服务**
+
+```python
+import base64
+import json
+
+import cv2
+import requests
+
+
+def cv2_to_base64(image):
+    data = cv2.imencode('.jpg', image)[1]
+    return base64.b64encode(data.tobytes()).decode('utf8')
+
+
+def main():
+    for i in range(1):
+        # 发送HTTP请求
+        data = {'images': [cv2_to_base64(cv2.imread("./image/example.jpg"))]}
+        headers = {"Content-type": "application/json"}
+        url = "http://127.0.0.1:8866/predict/chinese_ocr_db_crnn_server"
+        r = requests.post(url=url, headers=headers, data=json.dumps(data))
+        print(r.json()["results"])
+```
+
+**返回示例**
+
+```json
+{'msg': '', 'results': [{'data': [{'confidence': 0.9911051392555237, 'text': '又不是不能用', 'text_box_position': [[138, 270], [389, 270], [389, 310], [138, 310]]}], 'save_path': ''}], 'status': '000'}
+```
 
