@@ -106,6 +106,6 @@ def main():
 **返回示例**
 
 ```json
-{'msg': '', 'results': [{'data': [{'confidence': 0.9911051392555237, 'text': '又不是不能用', 'text_box_position': [[138, 270], [389, 270], [389, 310], [138, 310]]}], 'save_path': ''}], 'status': '000'}
+{"msg": "", "results": [{"data": [{"confidence": 0.9911051392555237, "text": "又不是不能用", "text_box_position": [[138, 270], [389, 270], [389, 310], [138, 310]]}], "save_path": ""}], "status": "000"}
 ```
 
